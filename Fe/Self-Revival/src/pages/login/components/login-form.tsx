@@ -6,11 +6,11 @@ import { Label } from "@/components/ui/label";
 
 export function LoginForm({ className, ...props }: React.ComponentProps<"div">) {
     return (
-        <div className={cn("flex flex-col gap-6 ", className)} {...props}>
-            <Card className="backdrop-blur-md bg-white/10 text-white border-white/20">
-                <CardHeader className="text-center">
+        <div className={cn("flex flex-col gap-6", className)} {...props}>
+            <Card>
+                <CardHeader>
                     <CardTitle>Login to your account</CardTitle>
-                    <CardDescription className="text-white/80">
+                    <CardDescription>
                         Enter your email below to login to your account
                     </CardDescription>
                 </CardHeader>
@@ -19,14 +19,19 @@ export function LoginForm({ className, ...props }: React.ComponentProps<"div">) 
                         <div className="flex flex-col gap-6">
                             <div className="grid gap-3">
                                 <Label htmlFor="email">Email</Label>
-                                <Input id="email" type="email" required />
+                                <Input
+                                    id="email"
+                                    type="email"
+                                    placeholder="m@example.com"
+                                    required
+                                />
                             </div>
                             <div className="grid gap-3">
                                 <div className="flex items-center">
                                     <Label htmlFor="password">Password</Label>
                                     <a
                                         href="#"
-                                        className="ml-auto inline-block text-sm underline-offset-4 hover:underline text-white/80"
+                                        className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
                                     >
                                         Forgot your password?
                                     </a>
@@ -34,21 +39,15 @@ export function LoginForm({ className, ...props }: React.ComponentProps<"div">) 
                                 <Input id="password" type="password" required />
                             </div>
                             <div className="flex flex-col gap-3">
-                                <Button
-                                    type="submit"
-                                    className=" *:w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white hover:opacity-90 cursor-pointer"
-                                >
+                                <Button type="submit" className="w-full">
                                     Login
                                 </Button>
-                                <Button
-                                    variant="outline"
-                                    className="w-full text-black cursor-pointer"
-                                >
+                                <Button variant="outline" className="w-full">
                                     Login with Google
                                 </Button>
                             </div>
                         </div>
-                        <div className="mt-4 text-center text-sm text-white/80">
+                        <div className="mt-4 text-center text-sm">
                             Don&apos;t have an account?{" "}
                             <a href="#" className="underline underline-offset-4">
                                 Sign up

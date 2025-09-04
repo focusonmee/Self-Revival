@@ -1,7 +1,9 @@
+import LandingPage from "./pages/landing-page/landing-page";
+
 function App() {
     return (
         <div>
-            <p>Dont hurt your self</p>
+            <LandingPage />
         </div>
     );
 }
